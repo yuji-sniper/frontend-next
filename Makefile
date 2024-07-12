@@ -25,7 +25,13 @@ yarn-ci:
 	docker compose run --rm node yarn install --immutable --immutable-cache --check-cache
 
 
+# その他
+open:
+	open http://localhost:3000
+
+
 # 初回起動
 init:
 	@make yarn-ci
 	@make up-build
+	@make open
