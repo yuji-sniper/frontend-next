@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "./components/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
+          <Header/>
           {children}
         </AppRouterCacheProvider>
       </body>
