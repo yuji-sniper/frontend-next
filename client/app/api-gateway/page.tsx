@@ -8,7 +8,7 @@ export default function Home() {
   const [response, setResponse] = useState('');
 
   const handleSubmit = async () => {
-    const url = "https://xxxxxx.execute-api.ap-northeast-1.amazonaws.com/dev";
+    const url = "#";
     const JSONdata = {
       text: text
     };
@@ -33,7 +33,9 @@ export default function Home() {
 
   return (
     <Container>
-      <Typography variant="h3">テスト</Typography>
+      <Typography variant="h3">
+        API Gateway
+      </Typography>
       <TextField
         label="入力テキスト"
         value={text}
