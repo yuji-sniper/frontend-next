@@ -8,10 +8,15 @@ export default function Home() {
   const [response, setResponse] = useState('');
 
   const handleSubmit = async () => {
-    const url = "#";
+    const url = process.env.NEXT_PUBLIC_HELLOWORLD_API_URL
     const JSONdata = {
       text: text
     };
+
+    if (!url) {
+      setResponse('API URLが設定されていません。');
+      return;
+    }
 
     try {
       const res = await fetch(url, {
@@ -24,10 +29,10 @@ export default function Home() {
 
       const data = await res.json();
       setResponse(JSON.stringify(data));
-      alert('Success');
+      console.log('Success:', data);
     } catch (error) {
       setResponse(JSON.stringify(error));
-      alert('Error');
+      console.error('Error:', error);
     }
   };
 
